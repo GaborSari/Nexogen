@@ -1,36 +1,16 @@
 <div class="ui centered grid">
   <div class="row"></div>
-  <div class="row">
-    <div class="five wide right floated column ">
-      <div class="ui input focus">
-        <input type="text" placeholder="Search..." [(ngModel)]="truckName" (change)="drawOrders()" #_truckName
-          tabindex="0" autofocus>
-      </div>
-      <div *ngIf="truckName.length>0" class="ui vertical animated inverted green right button"
-        (click)='copy(_truckName)' style='margin-left:2vw;'>
-        <div class="hidden content">Copy</div>
-        <div class="visible content">
-          <i class="share icon"></i>
-        </div>
-      </div>
+
+  <div class="centered row">
+    <div class="ten wide computer only fifteen wide tablet only fifteen wide mobile only column">
+      <errors></errors>
     </div>
   </div>
+
   <div class="row">
-    <div class="fourteen wide column">
-      <div class="ui raised segment">
-        <div id="timeline_wrapper" style="overflow-x: scroll;" [style.width.px]="timelineWidth" [hidden]="loading">
-          <div id="timeline"></div>
-        </div>
-        <div class="ui segment" [hidden]="!loading" style="height: 10vh;">
-          <div class="ui active dimmer">
-            <div class="ui text loader">Loading<br><i>For visual only</i></div>
-          </div>
-          <p></p>
-        </div>
-        <span *ngIf='rows == 0 && !loading'>
-          <a class="ui red label">Not found</a>
-        </span>
-      </div>
+    <div class="sixteen wide column">
+      <timeline></timeline>
     </div>
   </div>
+  
 </div>

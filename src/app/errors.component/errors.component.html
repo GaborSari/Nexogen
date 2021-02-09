@@ -1,0 +1,13 @@
+<div class="ui red raised segment" *ngIf="errors.length">
+    <div class="ui compact menu">
+      <a class="item">
+        <i class="bell users"></i> Errors
+        <div class="floating ui red label">{{errors.length}}</div>
+      </a>
+    </div>
+    <div class="ui bulleted list">
+      <div class="item" *ngFor="let error of errors">
+        <div class="ui red label">{{error.message}}</div>
+      </div>
+    </div>
+  </div>
